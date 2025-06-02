@@ -1,0 +1,8 @@
+.env: Variáveis de Ambiente;
+gitignore: tudo que não vai passar pro git
+
+.env: 
+SUPABASE_URL={supabaselink}
+SUPABASE_KEY={yourpublickey}
+JWT_SECRET={yoursecretword}
+port={yourport}

@@ -1,0 +1,15 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "Complete Full-Stack project -> Digital Store using JavaScrip, Node.js, Express.js and React. ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "gabr",
+  "license": "ISC",
+  "dependencies": {
+    "supabase": "^2.23.4"
+  }
+}
