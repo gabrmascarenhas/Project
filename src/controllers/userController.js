@@ -50,3 +50,39 @@ const authentication = async (request, response) =>{
     response.json({ token });
 
 };
+
+const userList = async (request, response) => {
+    const { data, err } = await supabase.from('users').select('id, name, email');
+
+        if(err) {
+            return response.status(500).json({
+                erro: "Error: ", err 
+            });
+        }
+        response.json(data);
+};
+
+const userUpdate = async (request, response) => {
+const { id } = request.params;
+const { name, email, password } = request.body;
+
+const dataUpdate = {
+    ...(name && { name }),
+    ...(email && {email}),
+    ...(password && {password: await bcrypt.hash(password, 10)})
+}
+    const { err } = await supabase.from('users').update(dataUpdate).eq('id', id);
+    
+    if(err){
+        return response.status(500).json({
+        msg: "Erro: ", err 
+        })
+    }
+        response.json({msg: "Usuário atualizado com sucesso"});
+};
+
+const userDelete = async (request, response) => {
+
+};
+
+export default userController;
