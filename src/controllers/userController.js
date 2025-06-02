@@ -38,7 +38,7 @@ const authentication = async (request, response) =>{
 
     if(!passwordsent) {
         return response.status(401).json({
-            msg = 'Credenciais inválidas.'
+            msg: 'Credenciais inválidas.'
         });
     }
     const token = jwt.sign(
@@ -48,5 +48,5 @@ const authentication = async (request, response) =>{
     );
 
     response.json({ token });
-    
+
 };
