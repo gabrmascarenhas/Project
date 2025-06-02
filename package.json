@@ -10,6 +10,10 @@
   "author": "gabr",
   "license": "ISC",
   "dependencies": {
-    "supabase": "^2.23.4"
+    "@supabase/supabase-js": "^2.49.9",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2"
   }
 }
