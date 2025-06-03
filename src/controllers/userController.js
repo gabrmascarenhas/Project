@@ -81,8 +81,20 @@ const dataUpdate = {
         response.json({msg: "Usuário atualizado com sucesso"});
 };
 
-const userDelete = async (request, response) => {
+const userDelete = async (request, response) => {   
+    const { id } = request.params;
 
+    const { err } = await supabase.from('users')
+    .delete()
+    .eq('id', id);
+
+    if(err){
+        return response.status(500).json({
+            msg: "Erro: ", err
+ });
+            
+    }
+    response.json({ msg: "Usuário excluido com sucesso."})
 };
 
-export default userController;
+export default { registerUser, authentication, userList, userUpdate, userDelete};
